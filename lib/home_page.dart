@@ -29,7 +29,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: Column(
-
           children: [
             Row(
               children: [
@@ -37,7 +36,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(12.0),
                   child: Text(
                     'Shoes\nCollection',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                    style: Theme.of(context).textTheme.titleLarge
                   ),
                 ),
                 Expanded(
@@ -60,7 +59,6 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 50,
 
-
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: filters.length,
@@ -77,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                       mouseCursor: SystemMouseCursors.move,
                       child: Chip(
                         backgroundColor: selectedFilter == filter
-                            ? Colors.yellowAccent
+                            ? Color.fromRGBO(236, 204, 76, 1.0)
                             : Color.fromRGBO(255, 255, 255, 1.0),
                         label: Text(filter),
                         labelStyle: TextStyle(fontWeight: FontWeight.w600),
