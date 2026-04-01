@@ -16,8 +16,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text('Details')),
-        titleTextStyle: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+        title: const Text('Details'),
+        titleTextStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -30,6 +30,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               ),
 
               Image.asset(widget.products['imageUrl'] as String, height: 300),
+              SizedBox(height: 8),
 
               Container(
                 height: 100,
@@ -92,7 +93,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
                   onPressed: () {},
 
-                  label: Text('Add to Cart', style: TextStyle(fontSize: 18)),
+                  label: Text('Add to Cart',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 18)),
                 ),
               ),
             ],

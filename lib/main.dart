@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/global_variables.dart';
 import 'package:flutter_app/home_page.dart';
+import 'package:flutter_app/product_details.dart';
 
 
 
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
         ),useMaterial3: true,
       ),debugShowMaterialGrid: false,
 
-      home: HomePage(),
+      home:HomePage(),
     );
   }
 }

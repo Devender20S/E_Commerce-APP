@@ -134,15 +134,22 @@ final product = [
     'id': '17',
     'company': 'Puma',
     'imageUrl': 'assets/images/shoe17.jpg',
-  },
+  },{
+    'title': 'Mona Ji\'s Sandals',
+    'price': 2999,
+    'sizes': [6, 7, 8, 9, 10],
+    'id': '18',
+    'company': 'Puma',
+    'imageUrl': 'assets/images/shoe18.jpg',
+  }
 ];
 final cart = [
   {
     'title': 'Men\'s jordan Shoes',
     'price': 5999,
     'sizes': [6, 7, 8, 9, 10],
-    'id': '18',
+    'id': '19',
     'company': 'Jordan Poole',
-    'imageUrl': 'assets/images/shoe17.png',
+    'imageUrl': 'assets/images/shoe17.jpg',
   },
 ];

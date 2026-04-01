@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/global_variables.dart';
 import 'package:flutter_app/product_carts.dart';
+import 'package:flutter_app/product_details.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -36,7 +37,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(12.0),
                   child: Text(
                     'Shoes\nCollection',
-                    style: Theme.of(context).textTheme.titleLarge
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
                 Expanded(
@@ -89,10 +90,21 @@ class _HomePageState extends State<HomePage> {
               child: ListView.builder(
                 itemBuilder: (context, index) {
                   final products = product[index];
-                  return ProductCard(
-                    title: products['title'] as String,
-                    price: products['price'] as int,
-                    image: products['imageUrl'] as String,
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return ProductDetailsPage(products: products);
+                          },
+                        ),
+                      );
+                    },
+                    child: ProductCard(
+                      title: products['title'] as String,
+                      price: products['price'] as int,
+                      image: products['imageUrl'] as String,
+                    ),
                   );
                 },
                 itemCount: product.length,
@@ -100,6 +112,12 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: ''),
+        ],
       ),
     );
   }
