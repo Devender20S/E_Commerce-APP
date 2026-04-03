@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/cart_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'global_variables.dart';
 
@@ -12,6 +14,21 @@ class ProductDetailsPage extends StatefulWidget {
 
 class _ProductDetailsPageState extends State<ProductDetailsPage> {
   int selectedSize = 0;
+  void onTap() {
+    if (selectedSize!=0){
+      Provider.of<CartProvider>(context, listen: false).addProduct({
+        'title': widget.products['title'],
+        'price': widget.products['price'],
+        'sizes': selectedSize,
+        'id': widget.products['id'],
+        'company': widget.products['company'],
+        'imageUrl': widget.products['imageUrl'],
+      });
+
+    }else{}
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,9 +108,12 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     minimumSize: Size(double.infinity, 40),
                   ),
 
-                  onPressed: () {},
+                  onPressed: (onTap),
 
-                  label: Text('Add to Cart',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 18)),
+                  label: Text(
+                    'Add to Cart',
+                    style: TextStyle(fontWeight: FontWeight.w400, fontSize: 18),
+                  ),
                 ),
               ),
             ],
